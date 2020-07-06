@@ -8,12 +8,13 @@ const url = require('url');
 const querystring = require('querystring');
 const http = require('http');
 const https = require('https');
+const config = require('../config')
 
 // const EventEmitter = require('events').EventEmitter;
 
 class APIHelper {
     constructor(){
-        this.cont = fs.readFileSync(__dirname + '/../../conf/payment_conf.xml').toString();
+        this.cont = process.env.ECPAY_PAYMENT_CONF || fs.readFileSync(config.ECPAY_PAYMENT_CONF_XML_PATH).toString();
         this.cont_xml = et.parse(this.cont);
         this.active_merc_info = this.cont_xml.findtext('./MercProfile');
         this.op_mode = this.cont_xml.findtext('./OperatingMode');

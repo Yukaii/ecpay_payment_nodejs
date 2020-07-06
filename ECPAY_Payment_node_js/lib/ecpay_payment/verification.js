@@ -4,10 +4,11 @@
 const ECpayError = require('./error.js');
 const fs = require('fs');
 const et = require('elementtree');
+const config = require('../config')
 
 class PaymentVerifyBase{
     constructor(){
-        this.param_xml_file = fs.readFileSync(__dirname + '/../../lib/ecpay_payment/ECpayPayment.xml').toString();
+        this.param_xml_file = process.env.ECPAY_PAYMENT || fs.readFileSync(config.ECPAY_PAYMENT_XML_PATH).toString();
         this.param_xml = et.parse(this.param_xml_file);
     }
 
