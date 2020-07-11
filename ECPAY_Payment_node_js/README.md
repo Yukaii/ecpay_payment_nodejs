@@ -1,7 +1,7 @@
 # 綠界 全方位(All In One) 金流
 
 > 本專案 fork 自綠界 [ECPay/ECPayAIO_Node.js](https://github.com/ECPay/ECPayAIO_Node.js)，為方便部屬及維護，做少許修改並發佈至 npm。
-> 商業支援除錯請找綠界，本人將提供任何支援 🐱
+> 商業支援除錯請找綠界，本人將不會提供任何支援 🐱
 
 ## 1. 介紹
 
